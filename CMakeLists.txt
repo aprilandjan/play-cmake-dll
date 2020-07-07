@@ -38,6 +38,7 @@ file (GLOB SOURCES "./*.cpp")
 
 #output library export file *.lib and
 #output macro definitions include file
+#see https://cmake.org/cmake/help/latest/module/GenerateExportHeader.html
 include (GenerateExportHeader)
 add_library(mylib SHARED ${SOURCES})
 

@@ -36,4 +36,5 @@ file (GLOB SOURCES "./*.cpp")
 add_executable(demo ${SOURCES})
 target_link_libraries (demo ${PROJECT_LINK_LIBS})
 
+#for windows, copy dependent dll into it
 file(COPY ${MYLIB_ABS_PATH} DESTINATION ${PROJECT_BINARY_DIR}/Debug)
