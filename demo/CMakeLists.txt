@@ -15,14 +15,14 @@ get_filename_component(
 
 get_filename_component(
     MYLIB_ABS_PATH
-    "${DEMO_DIR}/../build/Debug/mylib.dll"
+    "${DEMO_DIR}/../build/MinSizeRel/mylib.dll"
     ABSOLUTE
 )
 
 # set linked dll
 set (PROJECT_LINK_LIBS mylib.dll)
 
-link_directories (${PROJECT_ROOT_DIR}/build/Debug)
+link_directories (${PROJECT_ROOT_DIR}/build/MinSizeRel)
 
 include_directories (
     ${PROJECT_ROOT_DIR}/build/include 
@@ -37,4 +37,4 @@ add_executable(demo ${SOURCES})
 target_link_libraries (demo ${PROJECT_LINK_LIBS})
 
 #for windows, copy dependent dll into it
-file(COPY ${MYLIB_ABS_PATH} DESTINATION ${PROJECT_BINARY_DIR}/Debug)
+file(COPY ${MYLIB_ABS_PATH} DESTINATION ${PROJECT_BINARY_DIR}/MinSizeRel)
